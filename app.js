@@ -9,13 +9,16 @@
 
     methods: {
       moveToNextField(value, index) {
-        this.verify_code.push(value);
-          if(index < 4) {
-            this.$refs.input[index].focus()
-          }else {(index == 4)
-            this.show_input = false;
-          }
+        let code = this.verify_code;
+        let newValue = code[index -1] = value;
+        let test = code.filter( v => v !== '');
+
+          if(test.length < 4) {
+              this.$refs.input[index].focus(); 
+          }else {
+              this.show_input = false;
         }
+      },
     },
 
 });
