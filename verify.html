@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verify Cart</title>
+	<link rel="stylesheet" type="text/css" href="verify.css">
+	<meta name="keywords" content="Html Css Vue js">
+	<meta name="description" content="Verify Cart">
+	<meta name="authoe" content="saffetfiliz1989@gmail.com">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="app.js" defer></script>
+</head>
+<body>
+	<section class="contanier">
+		<div class="content">
+			<span class="content-title">
+				<h2>Verify your email address</h2>
+			</span>
+			<span class="content-info">
+				<p>We emailed you a four character code to arthur@email.com. Enter the code below to confirm your email address.</p>
+			</span>
+			    <span class="input-section" v-if="show_input">
+			    	<input 
+			    	   type="number" 
+			           v-for="index in 4"
+			           placeholder="0"  
+			           @input="moveToNextField($event.target.value, index)"
+			           ref="input"
+			           maxlength="1"
+			           required>
+			    </span>
+			    <span class="input-result" v-if="!show_input">
+			    	<h2>{{verify_code.join('').slice(-4)}}</h2>
+			    </span>
+			<span class="content-footer">
+				<p>Make sure to keep this window open while check your inbox. <a href="#">Resend code</a></p>
+			</span>
+		</div>
+	</section>
+</body>
+</html>
