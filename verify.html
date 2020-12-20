@@ -28,8 +28,8 @@
 			           maxlength="1"
 			           required>
 			    </span>
-			    <span class="input-result" v-if="!show_input" v-cloak>
-			    	<h2>{{verify_code.join('')}}</h2>
+			    <span class="input-result" v-if="!show_input">
+			    	<h2 v-cloak>{{verify_code.join('')}}</h2>
 			    </span>
 			<span class="content-footer">
 				<p>Make sure to keep this window open while check your inbox. <a href="#">Resend code</a></p>
